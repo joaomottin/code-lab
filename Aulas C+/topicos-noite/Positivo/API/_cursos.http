@@ -1,0 +1,14 @@
+### Lista todos os curso
+GET http://localhost:5161
+
+### Busca o curso pelo Id
+GET http://localhost:5161/4
+
+### Cadastra um novo curso
+POST  http://localhost:5161
+Content-Type: application/json
+
+{
+    "id": 5,
+    "name": "Testy"
+}
