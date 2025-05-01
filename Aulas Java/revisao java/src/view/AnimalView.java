@@ -25,7 +25,5 @@ public class AnimalView {
 
     System.out.println("Listar sons");
     controller.listarSons().forEach(System.out::println);    
-
-
     }
 }
