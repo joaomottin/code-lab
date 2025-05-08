@@ -1,0 +1,31 @@
+### Lista todos os curso
+GET http://localhost:5161/api/cursos
+
+### Busca o curso pelo Id
+GET http://localhost:5161/api/cursos/5
+
+### Cadastra um novo curso
+POST  http://localhost:5161/api/cursos
+Content-Type: application/json
+
+{
+    "name": "Curso novo",
+    "escola": {
+        "id": 1
+    }
+}
+
+
+### Atualização do curso
+PUT  http://localhost:5161/api/cursos/5
+Content-Type: application/json
+
+{
+    "name": "Biologia",
+     "escola": {
+        "id": 1
+    }
+}
+
+### Remove curso
+DELETE http://localhost:5161/7

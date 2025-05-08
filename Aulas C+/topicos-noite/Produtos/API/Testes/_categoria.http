@@ -1,0 +1,21 @@
+### Requisação para a raiz da aplicação
+GET http://localhost:5291
+
+### Listar categorias
+GET http://localhost:5291/api/categorias
+
+### Cadastrar categoria
+POST http://localhost:5291/api/categorias
+Content-Type: application/json
+
+{
+    "nome" : "Roupas"
+}
+
+### Alterar categoria
+PUT http://localhost:5291/api/categorias/1
+Content-Type: application/json
+
+{
+    "nome" : "Eletroeletrônicos"
+}

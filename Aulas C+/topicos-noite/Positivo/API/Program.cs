@@ -1,41 +1,18 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Namespace;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDataContext>();
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
-// Lista todos os cursos cadastrados
-app.MapGet("/", ([FromServices] AppDataContext ctx) => {
-    if (ctx.Cursos.Any()) {
-        return Results.Ok(ctx.Cursos.ToList());
-    }
-    return Results.NotFound();
-});
+app.MapControllers();
 
-// Busca o curso pelo identificador
-app.MapGet("/{id}", ([FromRoute] int id,
-                     [FromServices] AppDataContext ctx) => {
-    if (ctx.Cursos.Any()) {
-        return Results.Ok(ctx.Cursos.Include(curso => curso.Id == id));
-    }
-    return Results.NotFound();
-});
-
-// cadastrar um novo curso
-app.MapPost("/", ([FromBody] Curso curso,
-                  [FromServices] AppDataContext ctx) => {
-
-    if (ctx.Cursos.Any()) {    
-        ctx.Cursos.Add(curso);
-        ctx.SaveChanges();
-        return Results.Ok(curso);
-    }
-    
-    return Results.NotFound();
-});
-
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
