@@ -1,0 +1,35 @@
+### Requisação para a raiz da aplicação
+GET http://localhost:5291
+
+### Listar produtos
+GET http://localhost:5291/api/produtos
+
+### Buscar produto
+GET http://localhost:5291/api/produtos/e05cc469-d0df-462e-82ae-5153aaf3f540
+
+### Cadastrar produto
+POST http://localhost:5291/api/produtos
+Content-Type: application/json
+
+{
+    "nome" : "Água",
+    "preco" : 4.5,
+    "quantidade" : 153,
+    "descricao" : "Alimento",
+    "categoriaId" : 2
+}
+
+### Deletar produto
+DELETE http://localhost:5291/api/produtos/eef38bd9-3752-4f7e-b0fd-5bb95c88da05
+
+### Alterar produto
+PUT http://localhost:5291/api/produtos/3fc5c0a7-57f5-4991-a9f0-8a8802f4d48b
+Content-Type: application/json
+
+{
+    "nome" : "Água",
+    "descricao" : "Água",
+    "preco" : 4.5,
+    "quantidade" : 153,
+    "categoriaId" : 1    
+}
