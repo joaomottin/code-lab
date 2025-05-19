@@ -16,7 +16,7 @@ Content-Type: application/json
     "preco" : 4.5,
     "quantidade" : 153,
     "descricao" : "Alimento",
-    "categoriaId" : 2
+    "categoriaId" : 4
 }
 
 ### Deletar produto

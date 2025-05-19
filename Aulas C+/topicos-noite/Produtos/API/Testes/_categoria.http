@@ -9,7 +9,7 @@ POST http://localhost:5291/api/categorias
 Content-Type: application/json
 
 {
-    "nome" : "Roupas"
+    "nome" : "Comida"
 }
 
 ### Alterar categoria
